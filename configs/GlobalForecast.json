@@ -1,0 +1,101 @@
+{
+  "method": "ProtoCast",
+  "variant": "entmax",
+  "benchmark": "GlobalForecast",
+  "seed": 42,
+  "data": {
+    "variables": [
+      "u10",
+      "v10",
+      "t2m",
+      "tcc",
+      "r"
+    ],
+    "targets": [
+      "u10",
+      "v10",
+      "t2m",
+      "tcc",
+      "r"
+    ],
+    "height": 32,
+    "width": 64,
+    "input_steps": 12,
+    "output_steps": 12,
+    "step_hours": 1,
+    "normalization": "train_stats.json",
+    "splits": {
+      "train": [
+        2010,
+        2015
+      ],
+      "val": [
+        2016,
+        2016
+      ],
+      "test": [
+        2017,
+        2018
+      ]
+    },
+    "metric_groups": {
+      "uv10": [
+        "u10",
+        "v10"
+      ]
+    }
+  },
+  "model": {
+    "patch_size": 4,
+    "dim": 192,
+    "heads": 6,
+    "depth": 4,
+    "dropout": 0.1,
+    "post_adapter_fusion_gate_init": 0.0
+  },
+  "prototype": {
+    "num_prototypes": 64,
+    "key_dim": 64,
+    "rank": 16,
+    "temperature": 0.2,
+    "init_windows": 2048,
+    "init_samples": 8192,
+    "kmeans_iters": 25,
+    "refit_every": 1,
+    "variable_groups": {
+      "uv10": [
+        "u10",
+        "v10"
+      ],
+      "t2m": [
+        "t2m"
+      ],
+      "tcc": [
+        "tcc"
+      ],
+      "r": [
+        "r"
+      ]
+    }
+  },
+  "training": {
+    "epochs": 50,
+    "optimizer": "adam",
+    "lr": 0.003,
+    "adam_beta2": 0.995,
+    "weight_decay": 0,
+    "scheduler": "cosine",
+    "min_lr": 1e-06,
+    "warmup_epochs": 0,
+    "batch_size": 128,
+    "eval_batch_size": 64,
+    "accumulate_grad_batches": 1,
+    "num_workers": 4,
+    "prefetch_factor": 2,
+    "precision": "bf16-mixed",
+    "loss": "normalized_mse",
+    "latitude_weighting": false,
+    "early_stopping": false,
+    "gradient_clip": null
+  }
+}

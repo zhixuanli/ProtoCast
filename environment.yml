@@ -1,0 +1,8 @@
+name: protocast
+channels:
+  - defaults
+dependencies:
+  - python=3.10.8
+  - pip=26.0
+  - pip:
+      - -r requirements.txt

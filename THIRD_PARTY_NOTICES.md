@@ -1,0 +1,7 @@
+# Third-party notices
+
+- This research code was developed in the [OpenSTL](https://github.com/chengtan9907/OpenSTL) framework. Its original Apache-2.0 license and the CAIRI AI Lab copyright notice are retained in `LICENSE` and the corresponding source.
+- The backbone uses separate temporal and spatial attention, following the architectural approach of [PredFormer](https://github.com/yyyujintang/PredFormer). See Tang et al., *Video Prediction Transformers without Recurrence or Convolution*.
+- The forecasting baselines in `baselines/openstl/` adapt [OpenSTL](https://github.com/chengtan9907/OpenSTL) and [Met²Net](https://github.com/ShremG/Met2Net), distributed under Apache-2.0. The adaptations include the two benchmark data loaders, grouped-variable forecasting, evaluation metrics, and local train/test entry points.
+- PredFormer uses the authors' [Quadruplet-TSST implementation](https://github.com/yyyujintang/PredFormer/tree/a1493c4ade8eed740d7aed11da819e9aa7914c2d). The preparation script fetches the two required upstream files into a local cache and adjusts imports for this environment.
+- The prepared benchmarks are hosted separately. Their source attributions and component terms are in the [WeatherForecast license](https://huggingface.co/datasets/OliverLee520/WeatherForecast/blob/main/LICENSE.md) and [dataset notice](https://huggingface.co/datasets/OliverLee520/WeatherForecast/blob/main/NOTICE.md).

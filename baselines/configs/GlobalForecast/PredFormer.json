@@ -1,0 +1,62 @@
+{
+  "seed": 42,
+  "batch_size": 128,
+  "val_batch_size": 64,
+  "num_workers": 4,
+  "prefetch_factor": 2,
+  "precision": "bf16-mixed",
+  "dataname": "weather_mv5my_12_32x64_npy",
+  "pre_seq_length": 12,
+  "aft_seq_length": 12,
+  "total_length": 24,
+  "use_augment": false,
+  "metrics": [
+    "mse",
+    "mae",
+    "rmse",
+    "r2"
+  ],
+  "drop_last": false,
+  "method": "predformer",
+  "predformer_variant": "Quadruplet_TSST",
+  "drop": 0.0,
+  "accumulate_grad_batches": 1,
+  "epoch": 50,
+  "opt": "adam",
+  "weight_decay": 0,
+  "sched": "cosine",
+  "lr": 0.0005,
+  "lr_k_decay": 1.0,
+  "warmup_lr": 1e-05,
+  "min_lr": 1e-06,
+  "warmup_epoch": 0,
+  "model_config": {
+    "height": 32,
+    "width": 64,
+    "num_channels": 5,
+    "pre_seq": 12,
+    "after_seq": 12,
+    "patch_size": 4,
+    "dim": 256,
+    "heads": 8,
+    "dim_head": 32,
+    "dropout": 0.1,
+    "attn_dropout": 0.1,
+    "drop_path": 0.25,
+    "scale_dim": 2,
+    "depth": 1,
+    "Ndepth": 2
+  },
+  "in_shape": [
+    12,
+    5,
+    32,
+    64
+  ],
+  "metric_groups": {
+    "uv10": [
+      "u10",
+      "v10"
+    ]
+  }
+}

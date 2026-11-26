@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools==80.10.2", "wheel==0.46.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ProtoCast"
+dynamic = ["version"]
+description = "Prototype-conditioned adaptation for multivariate weather forecasting"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = [
+    "numpy==1.26.4",
+    "torch==2.7.0",
+    "torchvision==0.22.0",
+    "timm==0.9.16",
+]
+
+[project.optional-dependencies]
+logging = ["wandb==0.31.0"]
+
+[project.urls]
+Repository = "https://github.com/zhixuanli/ProtoCast"
+Data = "https://huggingface.co/datasets/OliverLee520/WeatherForecast"
+
+[tool.setuptools.dynamic]
+version = {attr = "protocast.version.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["protocast", "protocast.*"]
+namespaces = false

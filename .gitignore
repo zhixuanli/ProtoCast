@@ -1,0 +1,23 @@
+# Local experiment products and caches
+.runtime/
+.cache/
+work_dirs/
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+*.ckpt
+*.pt
+*.pth
+/reports/
+/wandbapi.txt
+.env
+.venv/
+.DS_Store
+/data/
+/build/
+/dist/
+*.safetensors
+
+# Local research archives
+/revised_codes/

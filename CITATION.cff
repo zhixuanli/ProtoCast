@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the ProtoCast manuscript and this implementation."
+type: software
+title: "ProtoCast"
+authors:
+  - given-names: Zhixuan
+    family-names: Li
+  - given-names: Hao
+    family-names: Jiang
+  - given-names: Chen
+    family-names: Hui
+  - given-names: Kai
+    family-names: Geng
+  - given-names: Weisi
+    family-names: Lin
+repository-code: "https://github.com/zhixuanli/ProtoCast"
+license: Apache-2.0

@@ -1,0 +1,7 @@
+include .gitignore CITATION.cff environment.yml requirements.txt
+recursive-include configs *.json
+recursive-include scripts *.sh
+recursive-include tools *.py
+include baselines/run.py baselines/prepare_predformer.sh baselines/requirements.txt
+recursive-include baselines/configs *.json
+recursive-include baselines/openstl *.py
