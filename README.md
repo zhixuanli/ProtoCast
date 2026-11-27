@@ -19,6 +19,7 @@
 
 Chinese Media Coverage
 
+- [将门创投](https://mp.weixin.qq.com/s/94FFZo1WEWZ_fbha3vB-SA)
 - [我爱计算机视觉](https://mp.weixin.qq.com/s/OZdYpXwR-J4a2o9O7djCuw)
 - [极市平台](https://mp.weixin.qq.com/s/pQOFsUxLDO4gKypUeJXFdA)
 
